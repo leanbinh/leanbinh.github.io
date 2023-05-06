@@ -1,81 +1,325 @@
 # leanbinh.github.io
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web lo</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif ;
+}
 
+
+body {
+    background: #020202;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background: #020202;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 100;
+}
+
+.header img {
+    position:relative;
+    color: #000000;
+    align-items: center;
+    top: auto;
+    right: 200px;
+    max-height: 60px;
+    cursor: pointer;
+    color: #00000;
     
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="https://vcs.vnggames.com/">Trang chủ</a>
-            <a href="https://www.leagueoflegends.com/vi-vn/">Liên Minh Huyền Thoại</a>
-            <a href="https://www.riotgames.com/en">Riot Games</a>
-            <a href="https://lolesports.com/">LoL Esports</a>
-        </nav>
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 20px;
+    right: 450px;
+    opacity: 1;
+    margin-left: 18px;
+    transition: opacity ease .3s;
+    width: 100%;
+    height: 80px;
+
+}
+
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 5px;
+    background: #D60000;
+    border-radius: none;
+    transform: translateY(32px);
+    opacity: 0;
+    transition: .1s;
+}
+
+.navbar a:hover::after {
+    transform: translateY(32px);
+    opacity: 1;
+}
+
+
+.search-bar {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #D60000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
     
-        <form action="#" class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button type="submit"><i class='bx bx-search'></i></button>
-        </form>
-    </header>
+}
 
-    <div class="background"></div>
-    <div class="container">
-        <div class="content">
-            <h2 class="logo"><i class='bx bxl-flutter'></i>VIETNAM CHAMPIONSHIP SERIES</h2>
-            <div class="text-sci">
-                <h2>Chào mừng!<br><span>
-                    Bạn đã đến với website chính thức của VCS
-                </span></h2>
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #D60000;
+    padding-left: 10px;
+    
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rem voluptatum illo mollitia harum praesentium inventore at aliquid maxime placeat tempore natus reprehenderit doloremque dolore voluptatibus consectetur culpa, vel quas!</p>
+}
 
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/vcslmht"><i class='bx bxl-facebook' ></i></a>
-                    <a href="https://www.tiktok.com/@vcslmht"><i class='bx bxl-tiktok' ></i></a>
-                    <a href="https://www.youtube.com/@vcslmht"><i class='bx bxl-youtube' ></i></a>
-                    
-                </div>
-            </div>
-        </div>
+.search-bar input::placeholder {
+    color: #e4e4e4;
+}
 
-        <div class="logreg-box">
-            <div class="form-box">
-                <form action="#">
-                    <h2>Đăng Nhập</h2>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bx-envelope' ></i></span>
-                        <input type="email" required>
-                        <label >Email</label>
-                    </div>
+.search-bar button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bx-lock-alt' ></i></span>
-                        <input type="password" required>
-                        <label>Mật khẩu</label>
-                    </div>
+.search-bar button i {
+    font-size: 22px;
+    color: #e4e4e4;
 
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">Nhớ đăng nhập của tôi</label>
-                        <a href="#">Quên mật khẩu?</a>
-                    </div>
-                    <button type="submit" class="btn">Đăng Nhập</button>
-                    <div class="login-register">
-                        <p>Bạn chưa có tài khoản?<a href="#" class="register-link">Tạo tài khoản</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background: url('https://i-amp.ex-cdn.com/mgn.vn/files/news/2023/04/27/skin-moi-nhat-cua-yasuo-co-the-tao-nen-muc-tien-thuong-khung-cho-msi-2023-092318.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+}
 
 
-    <script src="script.js"></script>
-</body>
-</html>
+.container {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    height: 550px;
+    background: url('https://am-a.akamaihd.net/image?resize=:&f=http%3A%2F%2Fstatic.lolesports.com%2Fdrops%2F1681999797741_MSI_6.gif') no-repeat;
+    background-size:contain;
+    background-position:center;
+    background-position-x: left;
+    border-radius: 10px;
+    margin-top: 20px;
+    right: -25%;
+}
+
+.container .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background: transparent;
+    padding: 80px;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    display: none;
+}
+
+.content .logo {
+    font-size: 30px;
+}
+
+.text-sci h2 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.text-sci h2 span {
+    font-size: 25px;
+}
+
+.text-sci p {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.social-icons a i {
+    font-size: 40px;
+    color: #e4e4e4;
+    margin-right: 10px;
+    transition: .5s ease ;
+}
+
+.social-icons a:hover i{
+    transform:  scale(1.2);
+}
+
+.container .logreg-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 67%);
+    height: 100%;
+}
+
+.logreg-box .form-box {
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #020202;
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #e4e4e4;
+}
+
+.form-box h2 {
+    font-size: 32px;
+    text-align: center;
+    
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color:#e4e4e4;
+    font-weight: 500;
+    padding-right: 28px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+    
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.form-box .remember-forgot {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #D60000;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color:#e4e4e4;
+    font-weight:  500;
+    box-shadow:0 0 10px rgba(0, 0, 0, .5);
+}
+
+.form-box .login-register {
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-register p a {
+    color:#e4e4e4;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: relative;
+    display:grid;
+    background: transparent;
+    color: #e4e4e4;
+    text-align: center;
+    font-size: 10px;
+    display: none;
+}
+
